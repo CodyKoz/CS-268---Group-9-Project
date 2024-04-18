@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/x-icon" href="MAP.png">
+        <meta charset="utf-8">
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            .content{
+                height: 100vh;
+                width: 100vw;
+                text-align: center;
+                display: grid;
+                grid-gap: 1vw;
+                grid-template-areas: 
+                "a b"
+                "a c"
+                "a d";
+            }
+            #sidemenu a:hover{
+                background-color: gray;
+            }
+            #sidemenu{
+                grid-area: a;
+                background-color: #333;
+                width: 24vw;
+                height: 100%;
+            }
+            #sidemenu a{
+                color: white;
+                text-decoration: none;
+                padding: 15px;
+                display: block;
+                text-align: center;
+            }
+            #maincontent{
+                background-color: white;
+                width: 80%;
+                height: 90vh;
+                float: right;
+            }
+            .footer{
+                grid-area: d;
+                background-color: white;
+                color: black;
+                width: 75vw;
+                height:5vh;
+                float:right;
+                text-align: center;
+            }
+            #h1{
+                grid-area: b;
+                height: 10vh;
+                width: 75vw;
+                text-align: left;
+                font-size: xxx-large;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                color: rgb(241, 66, 66);
+
+            }
+            .information{
+                grid-area: c;
+                height:80vh;
+                text-align: left;
+                color: darkslateblue;
+                padding-left: 10px;
+            }
+            .img{
+                float:left;
+                padding-right: 15px;
+            }
+            .imgright{
+                float:right;
+                padding-left: 15px;
+                padding-right: 35px;
+            }
+            
+        </style>
+    </head>
+    <body>
+    <div class="content">
+        <div id="sidemenu">
+            <ul>
+                <BR>
+                <li style="font-size: x-large; color: white;"> <a href="#"> Landmarks of Eau Claire <BR><BR> <img height="100px" src="MAP.png"> </a></li>
+                <li> <a href="#">Line RailroadBridge</a> </li>
+                <li> <a href="#">Mt. Simon Park</a> </li>
+                <li> <a href="#">Paul Bunyan Logging Camp Museum</a> </li>
+                <li> <a href="#">Olson’s Ice Cream</a> </li>
+                <li> <a href="#">Chippewa Valley Museum</a> </li>
+                <li> <a href="#">Phoenix Park</a> </li>
+                <li> <a href="#">James Newman Clark Bird Museum</a> </li>
+                <li> <a href="#">Clarence Chamberlin House</a> </li>
+                <li> <a href="#">Boyd Park</a> </li>
+                <li> <a href="#" style="background-color: white; color:#333">The Brewery Project</a> </li>
+            </ul>
+        </div>
+
+        <div id="h1">
+            The Brewery Project
+        </div>
+
+        <div class="information">
+            <div class="img">
+                <img height="300px" width="450px" src="BrewingProject1.jpg">
+            </div>
+
+            <adress style="font-size: x-large; color: black;"> 1807 N Oxford Ave, Eau Claire, WI 54703 </adress> <BR><BR>
+                 The Brewing Project is a small TapRoom, it's a place for anyone to gather to 
+            <BR> celebrate or hang out. It includes many interesting and innovative beers for 
+            <BR> those looking to try something new. The TapRoom is family and even dog friendly
+            <BR> for your furry little friends. Their mission is to "Create damn good beer Not
+            <BR> beer that EVERYONE will like; rather beer that many will love. Boring just 
+            <BR> just isn’t our style."
+            <BR>
+            <BR> Visit Today:
+            <BR> Monday - Thursday  4 - 10 PM
+            <BR> Friday - Saturday  12 - 11 PM
+            <BR> Sunday             12 - 8 PM
+            <BR>
+            <BR> More Information - <a href="https://www.thebrewingprojekt.com/" target="_blank" color="blue">thebrewingprojekt.com</a>
+            <BR><BR><BR><BR><BR>
+            
+            <div class="imgright">
+                <img height="200px" width="300px" src="BrewingProject2.jpg">
+            </div>
+            
+            <adress style="font-size: xx-large; color: gold;"> Rate This Location </adress> <BR> <BR>
+            <b href="#"> <img height="50px" width="50px" src="383218_empty_star_icon.png"> </a>
+            <c href="#"> <img height="50px" width="50px" src="383218_empty_star_icon.png"> </a>
+            <d href="#"> <img height="50px" width="50px" src="383218_empty_star_icon.png"> </a>
+            <e href="#"> <img height="50px" width="50px" src="383218_empty_star_icon.png"> </a>
+            <f href="#"> <img height="50px" width="50px" src="383218_empty_star_icon.png"> </a>
+            <BR> <BR> Average Rating:
+            
+        </div>
+
+       <footer class="footer">
+        <p> Footer Here</p>
+       </footer>
+    </div>
+    </body>
+</html>
