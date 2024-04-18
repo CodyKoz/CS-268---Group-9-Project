@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            .content{
+                height: 100vh;
+                width: 100vw;
+                text-align: center;
+                display: grid;
+                grid-gap: 1vw;
+                grid-template-areas: 
+                "a b"
+                "a c"
+                "a d";
+            }
+            #sidemenu a:hover{
+                background-color: gray;
+            }
+            #sidemenu{
+                grid-area: a;
+                background-color: #333;
+                width: 24vw;
+                height: 100%;
+            }
+            #sidemenu a{
+                color: white;
+                text-decoration: none;
+                padding: 15px;
+                display: block;
+                text-align: center;
+            }
+            #maincontent{
+                background-color: white;
+                width: 80%;
+                height: 90vh;
+                float: right;
+            }
+            .footer{
+                grid-area: d;
+                background-color: white;
+                color: black;
+                width: 75vw;
+                height:5vh;
+                float:right;
+                text-align: center;
+            }
+            #h1{
+                grid-area: b;
+                height: 10vh;
+                width: 75vw;
+                text-align: left;
+                font-size: xxx-large;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                color: rgb(241, 66, 66);
+
+            }
+            .information{
+                grid-area: c;
+                height:80vh;
+                text-align: left;
+                color: darkslateblue;
+                padding-left: 10px;
+            }
+            .img{
+                float:left;
+                padding-right: 15px;
+            }
+            .imgright{
+                float:right;
+                padding-left: 15px;
+                padding-right: 35px;
+            }
+            
+        </style>
+    </head>
+    <body>
+    <div class="content">
+        <div id="sidemenu">
+            <ul>
+                <BR>
+                <li style="font-size: x-large; color: white;"> <a href="#"> Landmarks of Eau Claire <BR><BR> <img height="100px" src="MAP.png"> </a></li>
+                <li> <a href="#" style="background-color: white; color:#333">Line Railroad Bridge</a> </li>
+                <li> <a href="#">Mt. Simon Park</a> </li>
+                <li> <a href="#">Paul Bunyan Logging Camp Museum</a> </li>
+                <li> <a href="#">Olson’s Ice Cream</a> </li>
+                <li> <a href="#">Chippewa Valley Museum</a> </li>
+                <li> <a href="#">Phoenix Park</a> </li>
+                <li> <a href="#">James Newman Clark Bird Museum</a> </li>
+                <li> <a href="#">Clarence Chamberlin House</a> </li>
+                <li> <a href="#">Boyd Park</a> </li>
+                <li> <a href="#">The Brewery Project</a> </li>
+            </ul>
+        </div>
+
+        <div id="h1">
+            Line Railroad Bridge
+        </div>
+
+        <div class="information">
+            <div class="img">
+                <img height="300px" width="450px" src="Soo_Line_RR_Bridge_Eau_Claire.jpg">
+            </div>
+
+            <adress style="font-size: x-large; color: black;"> Phoenix Park, Eau Claire, WI 54703 </adress> <BR><BR>
+                 Located inside of Phoenix Park in Eau Claire Wisconsin, Line Railroad Bridge 
+            <BR> was built in 1910 to replace an older structure. The bridge allowed trains 
+            <BR> to pass over the river into a heavily industrial part of the city. Once the
+            <BR> railroad wasn't used as often the tracks were taken down. 
+            <BR>
+            <BR> Roughly 10 years later in 2002 the bridge was opened up to pedestrians. 
+            <BR> The bridge is 442 feet long and has slight curves that were used to allow 
+            <BR> the train to weave back and forth without being to sharp for a train to 
+            <BR> pass over. The bridge is in the National Register of Historic Places after
+            <BR> it's rich history in the city of Eau Claire. It is now a place that is hiked 
+            <BR> over and heavily visited for it's importance to the city. 
+            <BR>
+            <BR> More History - <a href="https://www.leadertelegram.com/news/front-page/eau-claires-s-bridge-joins-national-register-of-historic-places/article_c79c1932-f455-5e57-869f-271580533230.html" target="_blank" color="blue">leadertelegram.com</a>
+            <BR><BR><BR><BR><BR>
+            
+            <div class="imgright">
+                <img height="200px" width="300px" src="Railroadtwo.jpg">
+            </div>
+            
+            <adress style="font-size: xx-large; color: gold;"> Rate This Location </adress> <BR> <BR>
+            <b href="#"> <img height="50px" width="50px" src="383218_empty_star_icon.png"> </a>
+            <c href="#"> <img height="50px" width="50px" src="383218_empty_star_icon.png"> </a>
+            <d href="#"> <img height="50px" width="50px" src="383218_empty_star_icon.png"> </a>
+            <e href="#"> <img height="50px" width="50px" src="383218_empty_star_icon.png"> </a>
+            <f href="#"> <img height="50px" width="50px" src="383218_empty_star_icon.png"> </a>
+            <BR> <BR> Average Rating:
+            
+        </div>
+
+       <footer class="footer">
+        <p> Footer Here</p>
+       </footer>
+    </div>
+    </body>
+</html>
