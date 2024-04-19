@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/x-icon" href="MAP.png">
+        <meta charset="utf-8">
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            .content{
+                height: 100vh;
+                width: 100vw;
+                text-align: center;
+                display: grid;
+                grid-gap: 1vw;
+                grid-template-areas: 
+                "a b"
+                "a c"
+                "a d";
+            }
+            #sidemenu a:hover{
+                background-color: gray;
+            }
+            #sidemenu{
+                grid-area: a;
+                background-color: #333;
+                width: 24vw;
+                height: 100%;
+            }
+            #sidemenu a{
+                color: white;
+                text-decoration: none;
+                padding: 15px;
+                display: block;
+                text-align: center;
+            }
+            #maincontent{
+                background-color: white;
+                width: 80%;
+                height: 90vh;
+                float: right;
+            }
+            .footer{
+                grid-area: d;
+                background-color: white;
+                color: black;
+                width: 75vw;
+                height:5vh;
+                float:right;
+                text-align: center;
+            }
+            #h1{
+                grid-area: b;
+                height: 10vh;
+                width: 75vw;
+                text-align: left;
+                font-size: xxx-large;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                color: rgb(241, 66, 66);
+
+            }
+            .information{
+                grid-area: c;
+                height:80vh;
+                text-align: left;
+                color: darkslateblue;
+                padding-left: 10px;
+            }
+            .img{
+                float:left;
+                padding-right: 15px;
+            }
+            .imgright{
+                float:right;
+                padding-left: 15px;
+                padding-right: 35px;
+            }
+            
+        </style>
+    </head>
+    <body>
+    <div class="content">
+        <div id="sidemenu">
+            <ul>
+                <BR>
+                <li style="font-size: x-large; color: white;"> <a href="#"> Landmarks of Eau Claire <BR><BR> <img height="100px" src="images/MAP.png"> </a></li>
+                <li> <a href="#">Line Railroad Bridge</a> </li>
+                <li> <a href="#">Mt. Simon Park</a> </li>
+                <li> <a href="#">Paul Bunyan Logging Camp Museum</a> </li>
+                <li> <a href="#">Olson’s Ice Cream</a> </li>
+                <li> <a href="#">Chippewa Valley Museum</a> </li>
+                <li> <a href="#">Phoenix Park</a> </li>
+                <li> <a href="#" style="background-color: white; color:#333">James Newman Clark Bird Museum</a> </li>
+                <li> <a href="#">Clarence Chamberlin House</a> </li>
+                <li> <a href="#">Boyd Park</a> </li>
+                <li> <a href="#">The Brewery Project</a> </li>
+            </ul>
+        </div>
+
+        <div id="h1">
+            James Newman Clark Bird Museum
+        </div>
+
+        <div class="information">
+            <div class="img">
+                <img height="300px" width="450px" src="images/JNCBirdMuseum.jpg">
+            </div>
+
+            <adress style="font-size: x-large; color: black;"> 105 Garfield Ave, Eau Claire, Wi 54701 </adress> <BR><BR>
+                The James Newman Clark Bird Museum hosts a collection of over 
+            <BR> 500 species of bird native to the Wisconsin area. They were collected
+            <BR> over the course of many years, from the 1870s through the 1920s.
+            <BR> Notable birds in the collection are a bald eagle, a golden eagle, 
+            <BR> as well as the now-extinct passenger pigeon. It is located on the 
+            <BR> UWEC campus and is free to all patrons. Come check it out!
+            <BR> 
+            <BR> 
+            <BR> 
+            <BR> 
+            <BR> 
+            <BR>
+            <BR> More History - <a href="https://www.uwec.edu/academics/college-arts-sciences/departments-programs/biology/explore-opportunities/academic-facilities/james-newman-clark-bird-museum/" target="_blank" color="blue">UWEC.edu</a>
+            <BR><BR><BR><BR><BR>
+            
+            <div class="imgright">
+                <img height="200px" width="300px" src="images/JNCBirdMuseum2.jpg">
+            </div>
+            
+            <adress style="font-size: xx-large; color: gold;"> Rate This Location </adress> <BR> <BR>
+            <b href="#"> <img height="50px" width="50px" src="images/383218_empty_star_icon.png"> </a>
+            <c href="#"> <img height="50px" width="50px" src="images/383218_empty_star_icon.png"> </a>
+            <d href="#"> <img height="50px" width="50px" src="images/383218_empty_star_icon.png"> </a>
+            <e href="#"> <img height="50px" width="50px" src="images/383218_empty_star_icon.png"> </a>
+            <f href="#"> <img height="50px" width="50px" src="images/383218_empty_star_icon.png"> </a>
+            <BR> <BR> Average Rating:
+            
+        </div>
+
+       <footer class="footer">
+        <p> Footer Here</p>
+       </footer>
+    </div>
+    </body>
+</html>
