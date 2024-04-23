@@ -1,0 +1,200 @@
+<html>
+    <header>
+        <style>
+            *{
+                margin: 0;
+            }
+
+            .container{
+                width: 100%;
+                height: 1500px;
+                overflow: hidden;
+                flex-direction: column;
+                background-color: rgba(0, 61, 96);
+                z-index: 1;
+                position: relative;
+            }
+
+            .backgroundImage {
+                position: absolute;
+                width: 100%;
+                height: 450px;
+                background-image: url("homepage.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center; 
+                overflow: hidden;
+                z-index: -1;
+            }
+
+
+
+            /*Menu stuff*/
+            .menu{
+                height: 64px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                background-color: rgba(0, 61, 96, 0.58);
+            }
+
+            .eauClaireLogo{
+                width: 55px;
+                overflow: hidden;
+                align-items: center;
+            }
+
+            .LogoText{
+                font-size: 15px;
+                font-weight: bold;
+            }
+
+            .tabs{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                height: 70%;
+                width: 20%;
+                overflow: hidden;
+                border-radius: 10px;
+                align-items: center;
+                font-size: 15px;
+                font-weight: bold;
+                color: white;
+            }
+
+            .tabs:hover{
+                border: 2px solid white;
+                cursor: pointer;
+            }
+
+            /*Main page stuff*/
+            .mainPageContainer{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                overflow: hidden;
+                height: 27.5%;
+                
+            }
+
+            .arrowSection{
+                width: 2.5%;
+                height: 350px;
+                font-size: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+
+            }
+
+            .spaceCenter{
+                width: 90%;
+                height: 100%;
+            }
+
+            .Circle{
+                width: 35px;
+                height: 35px;
+                border-radius: 8px;
+                position: relative;
+            }
+
+            .Circle h1 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 60%;
+            }
+
+            .Circle:hover{
+                border: 2px solid rgba(255, 255, 255, 0.6);
+                cursor: pointer;
+                visibility: visible;
+            }
+
+            /*Map*/
+
+            .mapContainer{
+                width: 100%;
+                height: 500px;
+                display: flex;
+                justify-content: center;
+                align-items: top;
+            }
+
+
+            .map{
+                position: sticky;
+                width: 80%;
+                height: 80%;
+                background-color: white;
+            }
+
+            .map > img {
+                width: 100%;
+            }
+
+        </style>
+    </header>
+
+    
+    <body>
+        <div class="container">
+            <div class="backgroundImage"></div>
+            <!--Menu section-->
+            <div class="menu">
+                <!--Eau Claire logo + text-->
+                <div style="display: flex; align-items: center;">
+                    <image src="Eau claire.png" class="eauClaireLogo"></image>
+                    <div class="LogoText">City of Eau Claire</div>
+                </div>
+                <div style="width: 20%;"></div>
+
+                <!--Random location tab-->
+                <div class="tabs">
+                    Random location
+                </div>
+
+                <!--Leave a review tab-->
+                <div class="tabs">
+                    Review a location
+                </div>
+
+                <div class="tabs">
+                    Project Credits
+                </div>
+            </div>
+
+            <!--Image slide section-->
+            <div class="mainPageContainer">
+                <!--Left arrow-->
+                <div class="arrowSection">
+                    <div class="Circle">
+                        <h1>&lt;</h1>
+                    </div>
+                </div>
+
+                <div class="spaceCenter"></div>
+
+                <!--Right Arrow-->
+                <div class="arrowSection">
+                    <div class="Circle">
+                        <h1>&gt;</h1>
+                    </div>
+                </div>
+            </div>
+
+            <!--Map section-->
+                <div class="mapContainer">
+                    <div class="map"> 
+                        <image src="EauClaireMap.png"></image>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
