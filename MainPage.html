@@ -1,16 +1,20 @@
 <html>
     <header>
+        <!--CSS stuff-->
         <style>
             *{
                 margin: 0;
+                cursor: default;
+                font-family: Helvetica, Arial, sans-serif;
+               
             }
 
             .container{
                 width: 100%;
-                height: 1500px;
+                height: 1950px;
                 overflow: hidden;
                 flex-direction: column;
-                background-color: rgba(0, 61, 96);
+                background-color: rgba(255, 255, 255);
                 z-index: 1;
                 position: relative;
             }
@@ -19,15 +23,13 @@
                 position: absolute;
                 width: 100%;
                 height: 450px;
-                background-image: url("images/homepage.jpg");
+                background-image: url(homepage.jpg);
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center; 
                 overflow: hidden;
                 z-index: -1;
             }
-
-
 
             /*Menu stuff*/
             .menu{
@@ -62,6 +64,8 @@
                 font-size: 15px;
                 font-weight: bold;
                 color: white;
+                background:transparent;
+                border: transparent;
             }
 
             .tabs:hover{
@@ -91,8 +95,18 @@
             }
 
             .spaceCenter{
+                display: flex;
                 width: 90%;
                 height: 100%;
+                align-items: center;
+                color: rgba(255, 255, 255, .2);
+                justify-content: center;
+                align-items: flex-end;
+                transform: translate(10px,-30px);
+            }
+
+            .spaceCenter > div{
+                font-size: 40px;
             }
 
             .Circle{
@@ -111,7 +125,7 @@
             }
 
             .Circle:hover{
-                border: 2px solid rgba(255, 255, 255, 0.6);
+                border: 2px solid rgba(255, 255, 255, 0.8);
                 cursor: pointer;
                 visibility: visible;
             }
@@ -119,6 +133,7 @@
             /*Map*/
 
             .mapContainer{
+                flex: 1;
                 width: 100%;
                 height: 500px;
                 display: flex;
@@ -132,69 +147,299 @@
                 width: 80%;
                 height: 80%;
                 background-color: white;
+                font-size: 18px;
             }
 
             .map > img {
                 width: 100%;
             }
 
+            .textChange:hover > h2{
+                content: 'Here is Clear Water!';
+                cursor: default;
+            }
+
+
+            .pins-container{
+                width: 575px;
+                height: 142.5%;
+            }
+
+            .pin {
+            position: relative;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            background-image: url('pinImage.png');
+            background-size: cover;
+            } 
+
+
+            /*Mt. Simon Park Fields*/
+            .pin1{
+                top: -535px;
+                left: 5px;
+            }
+
+            /*The Brewing Projekt*/
+            .pin2{
+                top: -390px;
+                left: -70px;
+            }
+
+            /*Phoenix Park*/
+            .pin3{
+                top: -350px;
+                left: -15px;
+            }
+
+            /*Olson's Ice Cream*/
+            .pin4{
+                top: -360px;
+                left: 20px;
+            }
+
+            /*Soo Line Railroad Bridge*/
+            .pin5{
+                top: -410px;
+                left: 100px;
+            }
+
+            /*Boyd Park*/
+            .pin6{
+                top: -420px;
+                left: 195px;
+            }
+
+            /*Chippewa valley Museum*/
+            .pin7{
+                top: -425px;
+                left: -165px;
+            }
+
+            /*Wisconsin Logging Museum*/
+            .pin8{
+                top: -405px;
+                left: -185px;
+            }
+
+            /*Clarence Chamberlin House*/
+            .pin9{
+                top: -425px;
+                left: -40px;
+            }
+
+            /*James Newman Clark Bird Museum*/
+            .pin10{
+                top: -275px;
+                left: 40px;
+            }
+
+            .pin > p{
+                font-size: 10px;
+                transform: translate(-35px, -20px);
+                white-space: nowrap;
+                text-align: center;
+                color: rgba(128, 128, 128, .7);
+            }
+            
+
         </style>
+
+        <!--Java script stuff-->
+
+        <script>
+
+            //Functions for changing the text.
+            function changeText(element) {
+                element.querySelector('h2').textContent = "Here is Clear Water!";
+            }
+
+            function resetText(element) {
+                element.querySelector('h2').textContent = "Voici l'eau claire!";
+            }
+
+             // Array of image URLs
+            const images = ['homepage.jpg', 'MtSimon.jpg', 'PhoenixPark.jpg']; // Add more image URLs as needed
+            let currentImageIndex = 0;
+            let intervalId;
+
+            // Function to change image to the previous one
+            function showPreviousImage() {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                document.getElementById('backgroundImage').style.backgroundImage = `url(${images[currentImageIndex]})`;
+                resetInterval();
+            }
+
+            // Function to change image to the next one
+            function showNextImage() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                document.getElementById('backgroundImage').style.backgroundImage = `url(${images[currentImageIndex]})`;
+                resetInterval();
+            }            
+
+            // Scroll to bottom
+            function scrollToBottom() {
+                window.scrollTo(0,document.body.scrollHeight);
+            }
+
+            // To review page 
+            function scrollToBottom() {
+                window.location.href = "reviewPage.html"; 
+            }
+
+            // Random page function
+            function randomLocation() {
+                var locations = ["TheBreweryProject.html", "RailRoadBridge.html", "MtSimonPark.html",  "PaulBunyanMuseum.html", "OlsonsIceCream.html", "Chippewa Valley Museum.html", "PhoenixPark.html", "JNCBirdMuseum.html", "Clarence Chamberlin House.html", "BoydPark.html"];
+                var randomIndex = Math.floor(Math.random() * locations.length);
+                var randomLocation = locations[randomIndex];
+                window.location.href = randomLocation;
+            }
+
+            function navigateToPage1() {
+                window.location.href = "MtSimonPark.html"; 
+            }
+
+            function navigateToPage2() {
+                window.location.href = "TheBreweryProject.html"; 
+            }
+
+            function navigateToPage3() {
+                window.location.href = "PhoenixPark.html"; 
+            }
+
+            function navigateToPage4() {
+                window.location.href = "OlsonsIceCream.html"; 
+            }
+
+            function navigateToPage5() {
+                window.location.href = "RailRoadBridge.html"; 
+            }
+
+            function navigateToPage6() {
+                window.location.href = "BoydPark.html"; 
+            }
+
+            function navigateToPage7() {
+                window.location.href = "Chippewa Valley Museum.html"; 
+            }
+
+            function navigateToPage8() {
+                window.location.href = "PaulBunyanMuseum.html"; 
+            }
+
+            function navigateToPage9() {
+                window.location.href = "Clarence Chamberlin House.html"; 
+            }
+
+            function navigateToPage10() {
+                window.location.href = "JNCBirdMuseum.html"; 
+            }
+
+        </script>
     </header>
 
     
     <body>
         <div class="container">
-            <div class="backgroundImage"></div>
+            <div class="backgroundImage" id="backgroundImage"></div>
             <!--Menu section-->
             <div class="menu">
                 <!--Eau Claire logo + text-->
                 <div style="display: flex; align-items: center;">
-                    <image src="images/Eauclaire.png" class="eauClaireLogo"></image>
+                    <image src="Eau claire.png" class="eauClaireLogo"></image>
                     <div class="LogoText">City of Eau Claire</div>
                 </div>
                 <div style="width: 20%;"></div>
 
-                <!--Random location tab-->
-                <div class="tabs">
-                    Random location
-                </div>
-
-                <!--Leave a review tab-->
-                <div class="tabs">
+                <!--Review tab-->
+                <button class="tabs" onclick="scrollToBottom()">
                     Review a location
-                </div>
+                </button>
 
-                <div class="tabs">
-                    Project Credits
-                </div>
+                <!--Random location tab-->
+                <button class="tabs" onclick="randomLocation()">
+                    Random location
+                </button>
+
+                <!--Scroll to bottom tab-->
+                <button class="tabs" onclick="scrollToBottom()">
+                    View a location
+                </button>
             </div>
 
             <!--Image slide section-->
             <div class="mainPageContainer">
                 <!--Left arrow-->
                 <div class="arrowSection">
-                    <div class="Circle">
+                    <div class="Circle" onclick="showPreviousImage()">
                         <h1>&lt;</h1>
                     </div>
                 </div>
 
-                <div class="spaceCenter"></div>
+                <div class="spaceCenter" style="transform: translate(0px, -155px);">
+                    <div></div>
+                </div>
 
                 <!--Right Arrow-->
-                <div class="arrowSection">
+                <div class="arrowSection" onclick="showNextImage()">
                     <div class="Circle">
                         <h1>&gt;</h1>
                     </div>
                 </div>
             </div>
 
-            <!--Map section-->
-                <div class="mapContainer">
-                    <div class="map"> 
-                        <image src="images/EauClaireMap.png"></image>
+            <div style="transform: translate(0px,-110px);">
+                <div class="textChange" onmouseover="changeText(this)" onmouseout="resetText(this)">
+                    <h2 style="text-align: center; transform: translate(0px, -15px);">Voici l'eau claire!</h2>
+                </div>
+
+                <hr>
+
+                <!--Map section-->
+                    <div class="mapContainer">
+                        <div class="map"> 
+                            <br>
+                            <h1 style="text-align: center;">Eau Claire's History</h1>
+                            <br>
+                            <p>Eau claire once had a thriving buffalo population along with other popular game animals, so the Eau Claire area was a valuable place to the tribes present at the time. The Eau claire area was a hotly contested area for the Sioux and Ojibwe for generations.</p>
+                            <br>
+                            <p>In 1767 an English traveler Honathan Carver wrote the first description of the area, where he would write about how he and his voyageurs navigated the Chippewa River via the Mississippi River. Both waterways were swollen from recent rains and having become extremely muddy, making them undrinkable for his thirsty crew. However, to their surprise, they encountered clear water at the mouth of the present-day Eau Claire River. In French, they exclaimed, “L’eau claire!” which translates to “clear water”.</p>
+                            <br>
+                            <p>But it wasn't until 1845 where the first permanent residence would begin to arrive. And by the early 180s there would be about 100 people that would call Eau Claire their home, most working for the local sawmills. And not too long after, large numbers of German and Norwegian immigrants would also arrive to Eau Claire in the 1860s.</p>
+                            <br>
+                            <p>After the Civil War, Wisconsin's lumber industry expanded rapidly, with Eau Claire being among the cities to be effected, the city would earn the nickname "Sawdust City" for its large number of sawmills. At the time there were more than 75 sawmills and factories that were making everything from furniture to eletric motors by the time it was 1890.</p>
+                            <br>
+                            <p>After Eau Claire's lumber boom, it would switch over to education and tires to fuel the local economy. In 1916 the University of Eau Claire would open along with being host to the Chippewa Valley Technical College and Immanuel Lutheran College today. Until 1992 the tire plant was the cities largest employer and one of the world's leading producers of automobile tires</p>
+                            <br>
+                            <hr>
+                            <br>
+                            <h1 style="text-align: center;">Pick a location!</h1>
+                            <br>
+                            <center>
+                            <div class="pins-container">
+                                <image style="width: 100%; height: 100%; z-index: -1;" src="MapNoPins1.png"></image>
+                                <div class="pin pin1" onclick="navigateToPage1()"><p>Mt. Simon Park Fields</p></div>
+                                <div class="pin pin2" onclick="navigateToPage2()"><p>The Brewing Projekt</p></div>
+                                <div class="pin pin3" onclick="navigateToPage3()"><p>Phoenix Park</p></div>
+                                <div class="pin pin4" onclick="navigateToPage4()"><p style="transform: translate(-15px, -20px);">Olson's Ice Cream</p></div>
+                                <div class="pin pin5" onclick="navigateToPage5()"><p>Soo Line Railroad Bridge</p></div>
+                                <div class="pin pin6" onclick="navigateToPage6()"><p style="transform: translate(-15px, -20px);">Boyd Park</p></div>
+                                <div class="pin pin7" onclick="navigateToPage7()"><p>Chippewa valley Museum</p></div>
+                                <div class="pin pin8" onclick="navigateToPage8()"><p>Wisconsin Logging Museum</p></div>
+                                <div class="pin pin9" onclick="navigateToPage9()"><p style="transform: translate(-50px, -20px);">Clarence Chamberlin House</p></div>
+                                <div class="pin pin10" onclick="navigateToPage10()"><p style="transform: translate(-75px, -20px);">James Newman Clark Bird Museum</p></div>
+                             </div>
+                            </center>
+                        </div>
                     </div>
                 </div>
             </div>
+            <footer>
+                <center>
+                    <p style="font-size: 10px;">CS 268 group 9</p>
+                </center>
+              </footer>
         </div>
     </body>
 </html>
