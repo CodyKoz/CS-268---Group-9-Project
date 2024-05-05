@@ -4,13 +4,21 @@
         <style>
             *{
                 margin: 0;
+                padding: 0;
                 cursor: default;
-                font-family: Helvetica, Arial, sans-serif;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                
             }
 
+            .firstContainer{
+                width: 100vw;
+                height: 1950px;
+                display: flex;
+                flex-direction: row;
+            }
+
             .container{
-                width: 100%;
+                width: 76%;
                 height: 1950px;
                 overflow: hidden;
                 flex-direction: column;
@@ -30,6 +38,31 @@
                 overflow: hidden;
                 z-index: -1;
             }
+
+            /*Navbar*/
+
+            #sidemenu {
+                background-color: #333;
+                width: 24%;
+                height: 100vh;
+                position: sticky;
+                top: 0; /* Add this */
+            }
+
+            #sidemenu a {
+                color: white;
+                text-decoration: none;
+                padding: 15px;
+                display: block;
+                text-align: center;
+                position: sticky;
+                top: 0; /* Add this */
+            }
+
+            #sidemenu a:hover {
+                background-color: gray;
+            }
+
 
             /*Menu stuff*/
             .menu{
@@ -284,7 +317,7 @@
             }
 
             // To review page 
-            function scrollToBottom() {
+            function toReviewPage() {
                 window.location.href = "reviewPage.html"; 
             }
 
@@ -341,105 +374,124 @@
 
     
     <body>
-        <div class="container">
-            <div class="backgroundImage" id="backgroundImage"></div>
-            <!--Menu section-->
-            <div class="menu">
-                <!--Eau Claire logo + text-->
-                <div style="display: flex; align-items: center;">
-                    <image src="images/Eauclaire.png" class="eauClaireLogo"></image>
-                    <div class="LogoText">City of Eau Claire</div>
-                </div>
-                <div style="width: 20%;"></div>
-
-                <!--Review tab-->
-                <button class="tabs" onclick="scrollToBottom()">
-                    Review a location
-                </button>
-
-                <!--Random location tab-->
-                <button class="tabs" onclick="randomLocation()">
-                    Random location
-                </button>
-
-                <!--Scroll to bottom tab-->
-                <button class="tabs" onclick="scrollToBottom({ behavior: 'smooth' })">
-                    View a location
-                </button>
+        <div class="firstContainer">
+            <div id="sidemenu">
+                <ul>
+                    <BR>
+                    <li style="font-size: x-large; background-color: white; font-weight: bold; color: #333;"> <a href="#" style="color: #333;"> Landmarks of Eau Claire <BR><BR> <img height="100px" src="images/MAP.png"> </a></li>
+                    <li> <a href="RailRoadBridge.html">Line Railroad Bridge</a> </li>
+                    <li> <a href="MtSimonPark.html">Mt. Simon Park</a> </li>
+                    <li> <a href="PaulBunyanMuseum.html">Paul Bunyan Logging Camp Museum</a> </li>
+                    <li> <a href="OlsonsIceCream.html">Olson’s Ice Cream</a> </li>
+                    <li> <a href="Chippewa Valley Museum.html">Chippewa Valley Museum</a> </li>
+                    <li> <a href="PhoenixPark.html">Phoenix Park</a> </li>
+                    <li> <a href="JNCBirdMuseum.html">James Newman Clark Bird Museum</a> </li>
+                    <li> <a href="Clarence Chamberlin House.html">Clarence Chamberlin House</a> </li>
+                    <li> <a href="BoydPark.html">Boyd Park</a> </li>
+                    <li> <a href="TheBreweryProject.html">The Brewery Project</a> </li>
+                </ul>
             </div>
 
-            <!--Image slide section-->
-            <div class="mainPageContainer">
-                <!--Left arrow-->
-                <div class="arrowSection">
-                    <div class="Circle" onclick="showPreviousImage()">
-                        <h1>&lt;</h1>
+            <div class="container">
+                <div class="backgroundImage" id="backgroundImage"></div>
+                <!--Menu section-->
+                <div class="menu">
+                    <!--Eau Claire logo + text-->
+                    <div style="display: flex; align-items: center;">
+                        <image src="images/Eauclaire.png" class="eauClaireLogo" style="padding-left: 10px;"></image>
+                        <div class="LogoText">City of Eau Claire</div>
+                    </div>
+                    <div style="width: 20%;"></div>
+
+                    <!--Review tab-->
+                    <button class="tabs" onclick="toReviewPage()">
+                        Review a location
+                    </button>
+
+                    <!--Random location tab-->
+                    <button class="tabs" onclick="randomLocation()">
+                        Random location
+                    </button>
+
+                    <!--Scroll to bottom tab-->
+                    <button class="tabs" onclick="scrollToBottom({ behavior: 'smooth' })">
+                        View a location
+                    </button>
+                </div>
+
+                <!--Image slide section-->
+                <div class="mainPageContainer">
+                    <!--Left arrow-->
+                    <div class="arrowSection">
+                        <div class="Circle" onclick="showPreviousImage()">
+                            <h1>&lt;</h1>
+                        </div>
+                    </div>
+
+                    <div class="spaceCenter" style="transform: translate(0px, -155px);">
+                        <div></div>
+                    </div>
+
+                    <!--Right Arrow-->
+                    <div class="arrowSection" onclick="showNextImage()">
+                        <div class="Circle">
+                            <h1>&gt;</h1>
+                        </div>
                     </div>
                 </div>
 
-                <div class="spaceCenter" style="transform: translate(0px, -155px);">
-                    <div></div>
-                </div>
-
-                <!--Right Arrow-->
-                <div class="arrowSection" onclick="showNextImage()">
-                    <div class="Circle">
-                        <h1>&gt;</h1>
+                <div style="transform: translate(0px,-110px);">
+                    <div class="textChange" onmouseover="changeText(this)" onmouseout="resetText(this)">
+                        <h2 style="text-align: center; transform: translate(0px, -15px);">Voici l'eau claire!</h2>
                     </div>
-                </div>
-            </div>
 
-            <div style="transform: translate(0px,-110px);">
-                <div class="textChange" onmouseover="changeText(this)" onmouseout="resetText(this)">
-                    <h2 style="text-align: center; transform: translate(0px, -15px);">Voici l'eau claire!</h2>
-                </div>
+                    <hr>
 
-                <hr>
-
-                <!--Map section-->
-                    <div class="mapContainer">
-                        <div class="map"> 
-                            <br>
-                            <h1 style="text-align: center;">Eau Claire's History</h1>
-                            <br>
-                            <p>Eau claire once had a thriving buffalo population along with other popular game animals, so the Eau Claire area was a valuable place to the tribes present at the time. The Eau claire area was a hotly contested area for the Sioux and Ojibwe for generations.</p>
-                            <br>
-                            <p>In 1767 an English traveler Honathan Carver wrote the first description of the area, where he would write about how he and his voyageurs navigated the Chippewa River via the Mississippi River. Both waterways were swollen from recent rains and having become extremely muddy, making them undrinkable for his thirsty crew. However, to their surprise, they encountered clear water at the mouth of the present-day Eau Claire River. In French, they exclaimed, “L’eau claire!” which translates to “clear water”.</p>
-                            <br>
-                            <p>But it wasn't until 1845 where the first permanent residence would begin to arrive. And by the early 180s there would be about 100 people that would call Eau Claire their home, most working for the local sawmills. And not too long after, large numbers of German and Norwegian immigrants would also arrive to Eau Claire in the 1860s.</p>
-                            <br>
-                            <p>After the Civil War, Wisconsin's lumber industry expanded rapidly, with Eau Claire being among the cities to be effected, the city would earn the nickname "Sawdust City" for its large number of sawmills. At the time there were more than 75 sawmills and factories that were making everything from furniture to eletric motors by the time it was 1890.</p>
-                            <br>
-                            <p>After Eau Claire's lumber boom, it would switch over to education and tires to fuel the local economy. In 1916 the University of Eau Claire would open along with being host to the Chippewa Valley Technical College and Immanuel Lutheran College today. Until 1992 the tire plant was the cities largest employer and one of the world's leading producers of automobile tires</p>
-                            <br>
-                            <hr>
-                            <br>
-                            <h1 style="text-align: center;">Pick a location!</h1>
-                            <br>
-                            <center>
-                            <div class="pins-container">
-                                <image style="width: 100%; height: 100%; z-index: -1;" src="images/MapNoPins1.png"></image>
-                                <div class="pin pin1" onclick="navigateToPage1()"><p>Mt. Simon Park Fields</p></div>
-                                <div class="pin pin2" onclick="navigateToPage2()"><p>The Brewing Projekt</p></div>
-                                <div class="pin pin3" onclick="navigateToPage3()"><p>Phoenix Park</p></div>
-                                <div class="pin pin4" onclick="navigateToPage4()"><p style="transform: translate(-15px, -20px);">Olson's Ice Cream</p></div>
-                                <div class="pin pin5" onclick="navigateToPage5()"><p>Soo Line Railroad Bridge</p></div>
-                                <div class="pin pin6" onclick="navigateToPage6()"><p style="transform: translate(-15px, -20px);">Boyd Park</p></div>
-                                <div class="pin pin7" onclick="navigateToPage7()"><p>Chippewa valley Museum</p></div>
-                                <div class="pin pin8" onclick="navigateToPage8()"><p>Wisconsin Logging Museum</p></div>
-                                <div class="pin pin9" onclick="navigateToPage9()"><p style="transform: translate(-50px, -20px);">Clarence Chamberlin House</p></div>
-                                <div class="pin pin10" onclick="navigateToPage10()"><p style="transform: translate(-75px, -20px);">James Newman Clark Bird Museum</p></div>
-                             </div>
-                            </center>
+                    <!--Map section-->
+                        <div class="mapContainer">
+                            <div class="map"> 
+                                <br>
+                                <h1 style="text-align: center;">Eau Claire's History</h1>
+                                <br>
+                                <p>Eau claire once had a thriving buffalo population along with other popular game animals, so the Eau Claire area was a valuable place to the tribes present at the time. The Eau claire area was a hotly contested area for the Sioux and Ojibwe for generations.</p>
+                                <br>
+                                <p>In 1767 an English traveler Honathan Carver wrote the first description of the area, where he would write about how he and his voyageurs navigated the Chippewa River via the Mississippi River. Both waterways were swollen from recent rains and having become extremely muddy, making them undrinkable for his thirsty crew. However, to their surprise, they encountered clear water at the mouth of the present-day Eau Claire River. In French, they exclaimed, “L’eau claire!” which translates to “clear water”.</p>
+                                <br>
+                                <p>But it wasn't until 1845 where the first permanent residence would begin to arrive. And by the early 180s there would be about 100 people that would call Eau Claire their home, most working for the local sawmills. And not too long after, large numbers of German and Norwegian immigrants would also arrive to Eau Claire in the 1860s.</p>
+                                <br>
+                                <p>After the Civil War, Wisconsin's lumber industry expanded rapidly, with Eau Claire being among the cities to be effected, the city would earn the nickname "Sawdust City" for its large number of sawmills. At the time there were more than 75 sawmills and factories that were making everything from furniture to eletric motors by the time it was 1890.</p>
+                                <br>
+                                <p>After Eau Claire's lumber boom, it would switch over to education and tires to fuel the local economy. In 1916 the University of Eau Claire would open along with being host to the Chippewa Valley Technical College and Immanuel Lutheran College today. Until 1992 the tire plant was the cities largest employer and one of the world's leading producers of automobile tires</p>
+                                <br>
+                                <hr>
+                                <br>
+                                <h1 style="text-align: center;">Pick a location!</h1>
+                                <br>
+                                <center>
+                                <div class="pins-container">
+                                    <image style="width: 100%; height: 100%; z-index: -1;" src="images/MapNoPins1.png"></image>
+                                    <div class="pin pin1" onclick="navigateToPage1()"><p>Mt. Simon Park Fields</p></div>
+                                    <div class="pin pin2" onclick="navigateToPage2()"><p>The Brewing Projekt</p></div>
+                                    <div class="pin pin3" onclick="navigateToPage3()"><p>Phoenix Park</p></div>
+                                    <div class="pin pin4" onclick="navigateToPage4()"><p style="transform: translate(-15px, -20px);">Olson's Ice Cream</p></div>
+                                    <div class="pin pin5" onclick="navigateToPage5()"><p>Soo Line Railroad Bridge</p></div>
+                                    <div class="pin pin6" onclick="navigateToPage6()"><p style="transform: translate(-15px, -20px);">Boyd Park</p></div>
+                                    <div class="pin pin7" onclick="navigateToPage7()"><p>Chippewa valley Museum</p></div>
+                                    <div class="pin pin8" onclick="navigateToPage8()"><p>Wisconsin Logging Museum</p></div>
+                                    <div class="pin pin9" onclick="navigateToPage9()"><p style="transform: translate(-50px, -20px);">Clarence Chamberlin House</p></div>
+                                    <div class="pin pin10" onclick="navigateToPage10()"><p style="transform: translate(-75px, -20px);">James Newman Clark Bird Museum</p></div>
+                                </div>
+                                </center>
+                                <footer style="transform: translate(0, 30px);">
+                                    <center>
+                                        <p style="font-size: 10px;">CS 268 group 9</p>
+                                    </center>
+                                </footer>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <footer>
-                <center>
-                    <p style="font-size: 10px;">CS 268 group 9</p>
-                </center>
-              </footer>
         </div>
     </body>
 </html>
